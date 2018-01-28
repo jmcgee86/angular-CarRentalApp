@@ -8,6 +8,11 @@
     <title>Document</title>
 </head>
 <body>
+    <div ng-controller = "RentalController as rentals">
+        <h1>{{rentals.product.carType}}</h1>
+        <h2>${{rentals.product.price}}</h2>
+        <p>{{rentals.product.description}}</p>
+    </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
 <script src="app.js"></script>
