@@ -8,14 +8,15 @@
     <title>Document</title>
 </head>
 <body ng-controller = "RentalController as rentals">
+    <h1>Jim's Car Rentals</h1>
     <div ng-repeat = "product in rentals.products">
-        <h1>{{product.carType}}</h1>
+        <h2>{{product.carType}}</h2>
         <img ng-src="{{product.images[0].thumb}}"/>
-        <h2 ng-hide="product.noneLeft">{{product.price | currency}}</h2>
+        <h4 ng-hide="product.noneLeft">Daily Rental Price: {{product.price | currency}}</h4>
         <p ng-hide="product.noneLeft">{{product.description}}</p>
         <p ng-hide="product.noneLeft">Fuel Economy: {{product.mpg}}</p>
         <p ng-show="product.noneLeft">Currently Unavailable</p>
-        <button ng-hide="product.noneLeft">Rent</button>
+        <button ng-hide="product.noneLeft" ng-click="product.rent()">Rent</button>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
