@@ -10,8 +10,10 @@
 <body>
     <div ng-controller = "RentalController as rentals">
         <h1>{{rentals.product.carType}}</h1>
-        <h2>${{rentals.product.price}}</h2>
-        <p>{{rentals.product.description}}</p>
+        <h2 ng-hide="rentals.product.noneLeft">${{rentals.product.price}}</h2>
+        <p ng-hide="rentals.product.noneLeft">{{rentals.product.description}}</p>
+        <p ng-show="rentals.product.noneLeft">Currently Unavailable</p>
+        <button ng-show="rentals.product.canRent" ng-hide="rentals.product.noneLeft">Rent</button>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
