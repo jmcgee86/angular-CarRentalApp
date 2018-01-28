@@ -10,8 +10,10 @@
 <body ng-controller = "RentalController as rentals">
     <div ng-repeat = "product in rentals.products">
         <h1>{{product.carType}}</h1>
-        <h2 ng-hide="product.noneLeft">${{product.price}}</h2>
+        <img ng-src="{{product.images[0].thumb}}"/>
+        <h2 ng-hide="product.noneLeft">{{product.price | currency}}</h2>
         <p ng-hide="product.noneLeft">{{product.description}}</p>
+        <p ng-hide="product.noneLeft">Fuel Economy: {{product.mpg}}</p>
         <p ng-show="product.noneLeft">Currently Unavailable</p>
         <button ng-hide="product.noneLeft">Rent</button>
     </div>
