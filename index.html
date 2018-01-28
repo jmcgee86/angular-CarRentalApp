@@ -16,7 +16,7 @@
         <p ng-hide="product.noneLeft">{{product.description}}</p>
         <p ng-hide="product.noneLeft">Fuel Economy: {{product.mpg}}</p>
         <p ng-show="product.noneLeft">Currently Unavailable</p>
-        <button ng-hide="product.noneLeft" ng-click="product.rent()">Rent</button>
+        <button ng-hide="product.noneLeft" ng-controller = "RentController as rentCtrl" ng-click="rentCtrl.rentCar(product)">Rent</button>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>

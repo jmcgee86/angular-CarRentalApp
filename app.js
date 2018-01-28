@@ -6,6 +6,16 @@
         this.products = cars;
     });
     
+    app.controller('RentController', function(){
+       this.rentCar = function(product){
+           product.rented++
+           console.log(product.rented + " " + product.carType +"'s rented")
+           if (product.rented === product.totalCars){
+                    product.noneLeft = true;
+                }
+       } 
+    });
+    
     var cars = [
         {
             carType: "Toyota Corolla",
@@ -20,14 +30,14 @@
                 ],
             totalCars: 20,
             rented: 0,
-            noneLeft: false,
-            rent: function(){
-                this.rented++
-                console.log(this.rented + " " + this.carType + "'s rented");
-                if (this.rented === this.totalCars){
-                    this.noneLeft = true;
-                }
-            }
+            noneLeft: false
+            // rent: function(){
+            //     this.rented++
+            //     console.log(this.rented + " " + this.carType + "'s rented");
+            //     if (this.rented === this.totalCars){
+            //         this.noneLeft = true;
+            //     }
+            // }
         },
         {
             carType: "Toyota Prius",
@@ -42,14 +52,14 @@
                 ],
             totalCars: 20,
             rented: 0,
-            noneLeft: false,
-            rent: function(){
-                this.rented++
-                console.log(this.rented + " " + this.carType + "'s rented");
-                if (this.rented === this.totalCars){
-                    this.noneLeft = true;
-                }
-            }
+            noneLeft: false
+            // rent: function(){
+            //     this.rented++
+            //     console.log(this.rented + " " + this.carType + "'s rented");
+            //     if (this.rented === this.totalCars){
+            //         this.noneLeft = true;
+            //     }
+            // }
         },
         {
             carType: "Toyota Rav4",
@@ -64,14 +74,14 @@
                 ],
             totalCars: 20,
             rented: 0,
-            noneLeft: false,
-            rent: function(){
-                this.rented++
-                console.log(this.rented + " " + this.carType + "'s rented");
-                if (this.rented === this.totalCars){
-                    this.noneLeft = true;
-                }
-            }
+            noneLeft: false
+            // rent: function(){
+            //     this.rented++
+            //     console.log(this.rented + " " + this.carType + "'s rented");
+            //     if (this.rented === this.totalCars){
+            //         this.noneLeft = true;
+            //     }
+            // }
         }
     ];
 })();
