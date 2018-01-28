@@ -7,13 +7,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    <div ng-controller = "RentalController as rentals">
-        <h1>{{rentals.product.carType}}</h1>
-        <h2 ng-hide="rentals.product.noneLeft">${{rentals.product.price}}</h2>
-        <p ng-hide="rentals.product.noneLeft">{{rentals.product.description}}</p>
-        <p ng-show="rentals.product.noneLeft">Currently Unavailable</p>
-        <button ng-show="rentals.product.canRent" ng-hide="rentals.product.noneLeft">Rent</button>
+<body ng-controller = "RentalController as rentals">
+    <div ng-repeat = "product in rentals.products">
+        <h1>{{product.carType}}</h1>
+        <h2 ng-hide="product.noneLeft">${{product.price}}</h2>
+        <p ng-hide="product.noneLeft">{{product.description}}</p>
+        <p ng-show="product.noneLeft">Currently Unavailable</p>
+        <button ng-hide="product.noneLeft">Rent</button>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
