@@ -65,4 +65,11 @@
             noneLeft: false
         }
     ];
+    
+    app.directive('carInfo', function(){
+        return{
+            restrict: 'A',
+            templateUrl: 'car-info.html'
+        };
+    });
 })();

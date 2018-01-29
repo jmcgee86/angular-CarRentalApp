@@ -1,0 +1,9 @@
+    <div ng-repeat = "product in rentals.products">
+        <h2>{{product.carType}}</h2>
+        <img ng-src="{{product.images[0].thumb}}"/>
+        <h4 ng-hide="product.noneLeft">Daily Rental Price: {{product.price | currency}}</h4>
+        <p ng-hide="product.noneLeft">{{product.description}}</p>
+        <p ng-hide="product.noneLeft">Fuel Economy: {{product.mpg}}</p>
+        <p ng-show="product.noneLeft">Currently Unavailable</p>
+        <button ng-hide="product.noneLeft" ng-controller = "RentController as rentCtrl" ng-click="rentCtrl.rentCar(product)">Rent</button>
+    </div>
